@@ -8,7 +8,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB_In_DotnetCoreAPI.Model;
-using MongoDB_In_DotnetCoreAPI.Model.interfaces;
 using MongoDB_In_DotnetCoreAPI.Service;
 using System;
 using System.Collections.Generic;
@@ -29,9 +28,10 @@ namespace MongoDB_In_DotnetCoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<BookstoreDatabaseSettings>(Configuration.GetSection(nameof(BookstoreDatabaseSettings)));
-            services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
+            var bookConfig = Configuration.GetSection("BookstoreDatabaseSettings")
+                                          .Get<BookstoreDatabaseSettings>(c => c.BindNonPublicProperties = true);
+            services.AddSingleton(bookConfig);
+
             services.AddScoped<BookService>();
             services.AddControllers();
         }

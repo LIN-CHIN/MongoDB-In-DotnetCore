@@ -1,14 +1,15 @@
 ﻿using MongoDB.Driver;
 using MongoDB_In_DotnetCoreAPI.Model;
-using MongoDB_In_DotnetCoreAPI.Model.interfaces;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace MongoDB_In_DotnetCoreAPI.Service
 {
     public class BookService
     {
         public readonly IMongoCollection<Book> _books;
-        public BookService(IBookstoreDatabaseSettings setting) 
+        public BookService(BookstoreDatabaseSettings setting)
         {
             var client = new MongoClient(setting.ConnectionString);
             var database = client.GetDatabase(setting.DatabaseName);
@@ -21,7 +22,7 @@ namespace MongoDB_In_DotnetCoreAPI.Service
            return  _books.Find(b => true).ToList();
         }
 
-        public Book Get(string id) 
+        public Book GetOne(string id) 
         {
             return _books.Find(b => b.Id == id).FirstOrDefault();
         }

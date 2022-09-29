@@ -1,11 +1,9 @@
-﻿using MongoDB_In_DotnetCoreAPI.Model.interfaces;
-
-namespace MongoDB_In_DotnetCoreAPI.Model
+﻿namespace MongoDB_In_DotnetCoreAPI.Model
 {
-    public class BookstoreDatabaseSettings : IBookstoreDatabaseSettings
+    public class BookstoreDatabaseSettings 
     {
-        public string BooksCollectionName { get; set; }
-        public string ConnectionString { get; set; }
-        public string DatabaseName { get; set; }
+        public string BooksCollectionName { get; private set; }
+        public string ConnectionString { get; private set; }
+        public string DatabaseName { get; private set; }
     }
 }

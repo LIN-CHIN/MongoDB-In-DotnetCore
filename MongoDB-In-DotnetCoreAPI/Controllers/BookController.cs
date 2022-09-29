@@ -23,7 +23,19 @@ namespace MongoDB_In_DotnetCoreAPI.Controllers
         [HttpGet]
         public ActionResult<IList<Book>> Get()
         {
-           return _service.Get();
+            return _service.Get();
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Book> GetOne([FromRoute] string id)
+        {
+            return _service.GetOne(id);
+        }
+
+        [HttpPost]
+        public ActionResult<Book> Insert([FromBody] Book book)
+        {
+            return Ok(_service.Insert(book));
         }
 
         [HttpPatch("{id}")]
