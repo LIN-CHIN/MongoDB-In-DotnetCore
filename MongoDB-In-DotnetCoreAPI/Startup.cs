@@ -1,3 +1,5 @@
+using DAO;
+using DAO.interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,8 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MongoDB_In_DotnetCoreAPI.Model;
-using MongoDB_In_DotnetCoreAPI.Service;
+using Model;
+using Model.ConfigModel;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,12 +31,16 @@ namespace MongoDB_In_DotnetCoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var bookConfig = Configuration.GetSection("BookstoreDatabaseSettings")
-                                          .Get<BookstoreDatabaseSettings>(c => c.BindNonPublicProperties = true);
-            services.AddSingleton(bookConfig);
+            var mongoDbConfig = Configuration.GetSection("MongoDBSettings")
+                                          .Get<MongoDbSettingModel>(c => c.BindNonPublicProperties = true);
 
-            services.AddScoped<BookService>();
-            services.AddControllers();
+
+            services.AddSingleton(mongoDbConfig);
+            services.AddSingleton<IAppUserDao, AppUserDao>();
+            services.AddTransient<AppUserService>();
+            services.AddTransient<AppUserModel>();
+
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,17 @@
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Service.dll
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Service.pdb
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Common.dll
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\DAO.dll
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Model.dll
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\DAO.pdb
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Model.pdb
+D:\chin-git\MongoDB-In-DotnetCore\Service\bin\Debug\netcoreapp3.1\Common.pdb
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.csproj.AssemblyReference.cache
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.dll
+D:\chin-git\MongoDB-In-DotnetCore\Service\obj\Debug\netcoreapp3.1\Service.pdb
