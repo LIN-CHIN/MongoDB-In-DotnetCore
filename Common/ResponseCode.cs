@@ -26,5 +26,10 @@ namespace Common
         /// </summary>
         public static ResponseCode SystemError = new ResponseCode(10001, "SystemError", "system catch error ");
 
+        /// <summary>
+        /// 找不到資料
+        /// </summary>
+        public static ResponseCode NotFindDataError = new ResponseCode(20001, "NotFindData");
+
     }
 }

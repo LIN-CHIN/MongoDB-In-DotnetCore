@@ -12,6 +12,8 @@ using Microsoft.Extensions.Options;
 using Model;
 using Model.ConfigModel;
 using Service;
+using Service.helper;
+using Service.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,11 +38,21 @@ namespace MongoDB_In_DotnetCoreAPI
 
 
             services.AddSingleton(mongoDbConfig);
-            services.AddSingleton<IAppUserDao, AppUserDao>();
-            services.AddTransient<AppUserService>();
-            services.AddTransient<AppUserModel>();
 
-            services.AddControllers().AddNewtonsoftJson();
+            #region DAO DI
+            services.AddSingleton<IAppUserDao, AppUserDao>();
+            #endregion
+
+            #region Service DI
+            services.AddTransient<IAppUserService, AppUserService>();
+            #endregion
+
+            #region Helper DI
+            services.AddTransient<AppUserHelper>();
+            #endregion
+
+            services.AddControllers()
+                    .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

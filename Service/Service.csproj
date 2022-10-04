@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
