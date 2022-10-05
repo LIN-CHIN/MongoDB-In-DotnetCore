@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Model;
 using Model.ConfigModel;
+using MongoDB_In_DotnetCoreAPI.Middleware;
 using Service;
 using Service.helper;
 using Service.interfaces;
@@ -66,6 +67,8 @@ namespace MongoDB_In_DotnetCoreAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseMiddleware<ExceptionHandleMiddleware>();
 
             app.UseAuthorization();
 
